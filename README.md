@@ -1,5 +1,20 @@
 # actix-poc
-Microservice using Actix
+Microservice using Actix/Diesel
+
+# Configure Diesel
+
+Configure Diesel client and create initial database
+```bash
+sudo apt install libpq-dev libmysqlclient-dev
+cargo install diesel_cli
+echo DATABASE_URL=file:customer.db > .env
+diesel setup
+```
+
+Creating customer table
+```
+diesel migration generate create_customer
+```
 
 # How to Run
 ```bash
