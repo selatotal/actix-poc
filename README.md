@@ -16,6 +16,11 @@ Creating customer table
 diesel migration generate create_customer
 ```
 
+Running migration
+````
+diesel migration run
+```
+
 # How to Run
 ```bash
 cargo run

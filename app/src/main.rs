@@ -21,7 +21,6 @@ async fn main() -> std::io::Result<()>{
                     .route("", web::post().to(rest::v1::customer::save))
                     .route("", web::get().to(rest::v1::customer::list))
                     .route("/query", web::get().to(rest::v1::customer::query))
-                    .route("/tags/query", web::get().to(rest::v1::customer::query_tags))
                     .route("/{id}", web::get().to(rest::v1::customer::get_by_id))
                     .route("/{id}", web::put().to(rest::v1::customer::update))
                     .route("/{id}", web::delete().to(rest::v1::customer::delete))

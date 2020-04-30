@@ -2,7 +2,7 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Serialize,Deserialize)]
 pub struct Customer {
-    pub id: String,
+    pub id: i32,
     pub document: String,
     pub name: String,
     #[serde(alias="secondName")]
@@ -11,15 +11,6 @@ pub struct Customer {
     pub person_type: String,
     #[serde(alias="deviceId")]
     pub device_id: String,
-    pub tags: Vec<CustomerTag>
-}
-
-#[derive(Serialize,Deserialize)]
-pub struct CustomerTag {
-    pub id: String,
-    pub name: String,
-    #[serde(alias="type")]
-    pub tag_type: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -37,18 +28,8 @@ pub struct QueryCustomer {
     pub second_name: String,
     #[serde(alias="personType", default)]
     pub person_type: String,
-    #[serde(alias="tagIds", default)]
-    pub tag_ids: Vec<String>,
     #[serde(alias="updatedFrom", default)]
     pub updated_from: u128,
     #[serde(alias="updatedTo", default)]
     pub updated_to: u128,
-}
-
-#[derive(Deserialize)]
-pub struct QueryTags {
-    #[serde(default)]
-    pub name: String,
-    #[serde(alias="type")]
-    pub query_type: String,
 }
