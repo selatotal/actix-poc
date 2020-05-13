@@ -1,10 +1,10 @@
 table! {
-    CUSTOMER (ID) {
-        ID -> Integer,
-        DOCUMENT -> Text,
-        NAME -> Text,
-        SECOND_NAME -> Nullable<Text>,
-        PERSON_TYPE -> Text,
-        DEVICE_ID -> Nullable<Text>,
+    customers (id) {
+        id -> Varchar,
+        document -> Varchar,
+        name -> Varchar,
+        second_name -> Nullable<Varchar>,
+        person_type -> Char,
+        device_id -> Nullable<Varchar>,
     }
 }

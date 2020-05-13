@@ -1,21 +1,28 @@
-use diesel;
-use self::models::*;
-use self::schema::*;
-use self::diesel::prelude::*;
+use diesel::prelude::*;
+use uuid::Uuid;
 
-pub fn get_all() {c
-    let connection = establish_connection();
-    let results = CUSTOMER.load::<Customer>(&connection);
-    for customer in results {
-        println!("{:?}", customer);
-    }
+use crate::contract;
+use crate::dao::schema;
+
+pub fn find_customer_by_id(
+    uid: Uuid,
+    conn: &MysqlConnection,
+) -> Result<Option<contract::customer::Customer>, diesel::result::Error>{
+    use schema::customers::dsl::*;
+    let customer = customers
+        .filter(id.eq(uid.to_string()))
+        .first::<contract::customer::Customer>(conn)
+        .optional()?;
+    Ok(customer)
 }
 
-pub fn establish_connection() -> SqliteConnection {
-    dotenv().ok();
-   let database_url = env::var("DATABASE_URL")
-        .expect("DATABASE_URL must be set");
-    
-    SqliteConnection::establish(&database_url)
-        .unwrap_or_else(|_| panic!("Error connecting to {}", database_url))
+pub fn insert(
+    customer: contract::customer::Customer,
+    conn: &MysqlConnection,
+) -> Result<contract::customer::Customer, diesel::result::Error>{
+    use schema::customers::dsl::*;
+    diesel::insert_into(customers)
+        .values(&customer)
+        .execute(conn)?;
+    Ok(customer)
 }

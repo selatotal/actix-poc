@@ -3,21 +3,19 @@ Microservice using Actix/Diesel
 
 # Configure Diesel
 
-Configure Diesel client and create initial database
+* Configure Diesel client and create initial database
 ```bash
-sudo apt install libpq-dev libmysqlclient-dev
+sudo apt install libpq-dev libmysqlclient-dev libsqlite3-dev
 cargo install diesel_cli
-echo DATABASE_URL=file:customer.db > .env
+echo DATABASE_URL="mysql://user:password@example.com/actix-poc" > .env
 diesel setup
 ```
-
-Creating customer table
+* Creating customer table
 ```
 diesel migration generate create_customer
 ```
-
-Running migration
-````
+* Running migration
+```
 diesel migration run
 ```
 
@@ -25,7 +23,7 @@ diesel migration run
 ```bash
 cargo run
 ```
-If you want debug (or other level) in logs
+* If you want debug (or other level) in logs
 ```bash
 LOG_LEVEL=debug cargo run
 ```
