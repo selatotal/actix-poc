@@ -24,6 +24,7 @@ cargo run
 
 ## Documentation
 * [Actix](https://actix.rs): Rust's powerful actor system and most fun web framework
+* [Diesel](https://diesel.rs): Diesel is a Safe, Extensible ORM and Query Builder for Rust
 
 ## Crates
 * [actix-rt](https://crates.io/crates/actix-rt): Actix runtime
