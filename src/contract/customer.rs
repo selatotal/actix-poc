@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use crate::dao::schema::customers;
 
-#[derive(Debug, Clone, Serialize, Deserialize, Queryable, Insertable)]
+#[derive(Debug, Clone, Serialize, Deserialize, Queryable, Insertable, AsChangeset)]
 pub struct Customer{
     pub id: String,
     pub document: String,
