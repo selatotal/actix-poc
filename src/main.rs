@@ -14,7 +14,7 @@ mod contract;
 
 #[actix_rt::main]
 async fn main() -> std::io::Result<()>{
-    std::env::set_var("RUST_LOG", "actix_web=debug,diesel=debug");
+    std::env::set_var("RUST_LOG", "debug");
     pretty_env_logger::init();
     dotenv::dotenv().ok();
 
