@@ -20,6 +20,9 @@ diesel migration run
 cargo run
 ```
 
+# Endpoints
+Import the [Postman Collection](postman/ActixPoc.postman_collection.json)
+
 # References
 
 ## Documentation

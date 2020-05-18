@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "67ad5ace-6a21-44a7-96e2-b3f2bc342f90",
+		"name": "Actix Poc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customerServer}}/rest/customer/:id",
+							"host": [
+								"{{customerServer}}"
+							],
+							"path": [
+								"rest",
+								"customer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "73346547-4697-463a-bd83-4b17014a274c",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{customerServer}}/rest/customer",
+							"host": [
+								"{{customerServer}}"
+							],
+							"path": [
+								"rest",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Costumer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{customerServer}}/rest/customer/:id",
+							"host": [
+								"{{customerServer}}"
+							],
+							"path": [
+								"rest",
+								"customer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "73346547-4697-463a-bd83-4b17014a274c",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"12345678901\",\n    \"name\": \"Name\",\n    \"secondName\": \"Second name\",\n    \"personType\": \"J\",\n    \"deviceId\": \"892962556416042759408152718178207591774500325695360457545052\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customerServer}}/rest/customer/:id",
+							"host": [
+								"{{customerServer}}"
+							],
+							"path": [
+								"rest",
+								"customer",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "73346547-4697-463a-bd83-4b17014a274c",
+									"type": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"document\": \"12345678901\",\n    \"name\": \"Name\",\n    \"secondName\": \"Second name\",\n    \"personType\": \"J\",\n    \"deviceId\": \"892962556416042759408152718178207591774500325695360457545052\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{customerServer}}/rest/customer",
+							"host": [
+								"{{customerServer}}"
+							],
+							"path": [
+								"rest",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
