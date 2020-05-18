@@ -34,6 +34,9 @@ async fn main() -> std::io::Result<()>{
             .wrap(middleware::Logger::default())
             .service(rest::customer::get_customer)
             .service(rest::customer::insert)
+            .service(rest::customer::update)
+            .service(rest::customer::delete)
+            .service(rest::customer::get_all)
     })
     .bind(&bind)?
     .run()

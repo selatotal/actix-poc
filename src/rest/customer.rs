@@ -76,7 +76,7 @@ async fn insert(
 }
 
 #[put("/rest/customer/{id}")]
-async fn update_customer(
+async fn update(
     pool: web::Data<DbPool>,
     user_uid: web::Path<Uuid>,
     form: web::Json<contract::customer::NewCustomer>,
@@ -103,7 +103,7 @@ async fn update_customer(
 }
 
 #[delete("/rest/customer/{id}")]
-async fn delete_customer(
+async fn delete(
     pool: web::Data<DbPool>,
     user_uid: web::Path<Uuid>,
 ) -> Result<HttpResponse, Error> {

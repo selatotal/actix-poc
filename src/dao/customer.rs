@@ -1,6 +1,6 @@
 use diesel::prelude::*;
 use uuid::Uuid;
-
+use log::*;
 use crate::contract;
 use crate::dao::schema;
 
@@ -32,7 +32,7 @@ pub fn update(
     conn: &MysqlConnection,
 ) -> Result<contract::customer::Customer, diesel::result::Error>{
     use schema::customers::dsl::*;
-
+    info!("Updating");
     diesel::update(customers)
         .set(&customer)
         .execute(conn)?;
